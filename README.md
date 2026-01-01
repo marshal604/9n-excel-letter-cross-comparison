@@ -1,64 +1,55 @@
 # 9n-excel-letter-cross-comparison
 
-A web tool for comparing cell values between two Excel files. Upload two Excel files (A and B) and instantly see:
+Excel 格子內容交叉比對工具。上傳 A、B 兩個 Excel 檔案，快速找出兩邊的差異與共同內容。
 
-- **Only in A**: Values that exist only in File A
-- **Common (A n B)**: Values that exist in both files
-- **Only in B**: Values that exist only in File B
+**Demo:** https://marshal604.github.io/9n-excel-letter-cross-comparison/
+
+## Purpose
+
+比對兩個 Excel 檔案中所有格子的內容，顯示：
+
+- **Only in A** - A 獨有的值
+- **Common (A ∩ B)** - AB 兩邊共同有的值
+- **Only in B** - B 獨有的值
+
+適用於：
+- 比對兩份名單的差異
+- 找出重複或缺漏的資料
+- 資料合併前的檢查
 
 ## Features
 
-- Drag & drop file upload
-- Supports `.xlsx`, `.xls`, and `.csv` files
-- Reads all sheets in each Excel file
-- Real-time comparison results
-- Responsive design with dark theme
-- Deployed on GitHub Pages
+- 拖放或點擊上傳檔案
+- 支援 `.xlsx`、`.xls`、`.csv` 格式
+- 自動讀取所有 sheets
+- 即時顯示比對結果
+- 深色主題 + 動畫效果
 
 ## Usage
 
-1. Upload File A (drag & drop or click to browse)
-2. Upload File B (drag & drop or click to browse)
-3. Click "Compare Files"
-4. View the comparison results in three categories
+1. 上傳 File A
+2. 上傳 File B
+3. 點擊 "Compare Files"
+4. 查看三種比對結果
 
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
 ## Deployment
 
-This project is configured for GitHub Pages deployment:
-
 ```bash
-# Deploy to gh-pages branch
 npm run deploy
 ```
 
-After deploying, enable GitHub Pages in your repository settings:
-1. Go to Settings > Pages
-2. Set Source to "Deploy from a branch"
-3. Select the `gh-pages` branch
-
 ## Tech Stack
 
-- React 19
-- TypeScript
-- Vite
-- SheetJS (xlsx) for Excel parsing
-- gh-pages for deployment
+- React 19 + TypeScript + Vite
+- SheetJS (xlsx)
+- gh-pages
 
 ## License
 

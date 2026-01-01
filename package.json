@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://hubert.github.io/9n-excel-letter-cross-comparison",
+  "homepage": "https://marshal604.github.io/9n-excel-letter-cross-comparison",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
