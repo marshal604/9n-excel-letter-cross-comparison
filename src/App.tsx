@@ -157,6 +157,19 @@ function App() {
     }
   }
 
+  const downloadAsTxt = (data: string[], filename: string) => {
+    const content = data.join('\n')
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `${filename}.txt`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
+
   return (
     <div className="app">
       <header className="header">
@@ -251,7 +264,18 @@ function App() {
                 <span className="result-card__dot"></span>
                 Only in A
               </div>
-              <span className="result-card__count">{result.onlyA.length}</span>
+              <div className="result-card__actions">
+                <span className="result-card__count">{result.onlyA.length}</span>
+                {result.onlyA.length > 0 && (
+                  <button
+                    className="download-btn"
+                    onClick={() => downloadAsTxt(result.onlyA, 'only-in-A')}
+                    title="Download as TXT"
+                  >
+                    &#8595;
+                  </button>
+                )}
+              </div>
             </div>
             <div className="result-card__content">
               {result.onlyA.length > 0 ? (
@@ -274,7 +298,18 @@ function App() {
                 <span className="result-card__dot"></span>
                 Common (A ∩ B)
               </div>
-              <span className="result-card__count">{result.common.length}</span>
+              <div className="result-card__actions">
+                <span className="result-card__count">{result.common.length}</span>
+                {result.common.length > 0 && (
+                  <button
+                    className="download-btn"
+                    onClick={() => downloadAsTxt(result.common, 'common')}
+                    title="Download as TXT"
+                  >
+                    &#8595;
+                  </button>
+                )}
+              </div>
             </div>
             <div className="result-card__content">
               {result.common.length > 0 ? (
@@ -297,7 +332,18 @@ function App() {
                 <span className="result-card__dot"></span>
                 Only in B
               </div>
-              <span className="result-card__count">{result.onlyB.length}</span>
+              <div className="result-card__actions">
+                <span className="result-card__count">{result.onlyB.length}</span>
+                {result.onlyB.length > 0 && (
+                  <button
+                    className="download-btn"
+                    onClick={() => downloadAsTxt(result.onlyB, 'only-in-B')}
+                    title="Download as TXT"
+                  >
+                    &#8595;
+                  </button>
+                )}
+              </div>
             </div>
             <div className="result-card__content">
               {result.onlyB.length > 0 ? (

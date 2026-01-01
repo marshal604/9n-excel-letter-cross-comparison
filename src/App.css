@@ -364,6 +364,49 @@
   color: var(--color-common);
 }
 
+.result-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.download-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.result-card--a .download-btn:hover {
+  background: var(--color-a);
+  border-color: var(--color-a);
+}
+
+.result-card--b .download-btn:hover {
+  background: var(--color-b);
+  border-color: var(--color-b);
+}
+
+.result-card--common .download-btn:hover {
+  background: var(--color-common);
+  border-color: var(--color-common);
+}
+
 .result-card__content {
   padding: 1.5rem;
   min-height: 200px;
